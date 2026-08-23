@@ -1,0 +1,58 @@
+# AI-Based Counter-Drone Detection System
+
+An AI/ML system that classifies radar micro-Doppler signals to detect and distinguish between drones, cars, and people — built to support counter-drone surveillance systems for defence and security applications.
+
+## Live Demo
+
+[Try the live app here](https://counter-drone-detection-syh5nckhzps3j4i2y9eg3f.streamlit.app)
+
+Upload a radar signal CSV file and get instant classification with a confidence score. If a drone is detected, the system raises a hostile-object alert.
+
+## Problem Statement
+
+Low-cost commercial drones are increasingly used for unauthorized surveillance, smuggling, and payload delivery near sensitive military and civilian zones. Traditional radar systems often struggle to distinguish drones from birds, vehicles, or people in real time. This project builds an AI-based classification layer that can sit on top of existing radar hardware to automatically identify the type of object detected.
+
+## How It Works
+
+1. Radar returns a micro-Doppler signature for a detected object
+2. The signature is represented as an 11x61 matrix of signal values
+3. A Convolutional Neural Network (CNN) classifies the object as **Drone**, **Car**, or **Person**
+4. If classified as a Drone, the system raises a threat alert
+
+## Model Architecture
+
+- Input: 11x61x1 radar signal matrix
+- 2 Convolutional + MaxPooling layers
+- Fully connected dense layer with dropout for regularization
+- Softmax output layer (3 classes)
+
+## Dataset
+
+Real Doppler RAD-DAR Database — radar micro-Doppler signatures for Drones, Cars, and People (17,485 samples total).
+
+## Results
+
+- Test Accuracy: ~93-96%
+- Balanced performance across all three classes
+
+## Tech Stack
+
+- **Model:** TensorFlow / Keras (CNN)
+- **Data Processing:** Pandas, NumPy, scikit-learn
+- **Web App:** Streamlit
+- **Training Environment:** Google Colab (T4 GPU)
+
+## Project Structure
+
+
+
+## Future Scope (Level 2)
+
+- Multi-sensor fusion (radar + acoustic + RF signals)
+- Real-time streaming input instead of file upload
+- Threat-tier classification (friendly/unknown/hostile) based on flight pattern
+- Edge deployment for real-time field use
+
+## Author
+
+Built as part of a Smart India Hackathon (SIH) project — AI/ML domain, focused on defence and security applications.
