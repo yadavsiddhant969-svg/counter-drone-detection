@@ -21,8 +21,8 @@ model = models.Sequential([
 model.load_weights('model.weights.h5')
 
 classes = ["Drones", "Cars", "People"]
-X_min = -130.0
-X_max = 0.0
+X_min = -190.69
+X_max = -38.659
 
 uploaded_file = st.file_uploader("Upload Radar Signal CSV File", type="csv")
 
