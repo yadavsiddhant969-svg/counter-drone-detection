@@ -6,7 +6,7 @@ import tensorflow as tf
 st.title("AI-Based Counter-Drone Detection System")
 st.write("Upload a radar micro-Doppler signal CSV file to classify the detected object.")
 
-model = tf.keras.models.load_model('drone_classifier_model.h5')
+model = tf.keras.models.load_model('drone_classifier_model.keras')
 classes = ["Drones", "Cars", "People"]
 
 X_min = -130.0
